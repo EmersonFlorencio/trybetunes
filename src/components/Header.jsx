@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Loading from './Loading';
 import { getUser } from '../services/userAPI';
 
@@ -17,7 +18,6 @@ class Header extends React.Component {
 
   hendleHeaderName = async () => {
     const user = await getUser();
-    console.log(user);
     this.setState({
       isloading: false,
       loadName: user,
@@ -29,11 +29,22 @@ class Header extends React.Component {
     return (
       <>
         <header data-testid="header-component">
-          {isloading && <Loading />}
+          <Link data-testid="link-to-search" to="/search">
+            Pesquisa
+          </Link>
+          <Link data-testid="link-to-favorites" to="/favorites">
+            Favoritos
+          </Link>
+          <Link data-testid="link-to-profile" to="/profile">
+            Profile
+          </Link>
         </header>
-        <p data-testid="header-user-name">
-          {`Ola, ${loadName.name}!`}
-        </p>
+        {isloading ? <Loading />
+          : (
+            <p data-testid="header-user-name">
+              {`Ola, ${loadName.name}!`}
+            </p>
+          )}
       </>
 
     );
