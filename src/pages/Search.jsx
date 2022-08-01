@@ -32,7 +32,7 @@ class Search extends React.Component {
       <div data-testid="page-search">
         <Header />
         <form>
-          <label htmlFor="login-artist-input">
+          <label htmlFor="search-artist-input">
             <input
               type="text"
               data-testid="search-artist-input"
