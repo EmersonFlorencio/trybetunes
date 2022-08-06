@@ -43,6 +43,7 @@ class Login extends React.Component {
     const { nameLogin, buttonDisable, isLoading } = this.state;
     return (
       <div data-testid="page-login">
+        <h2>Login</h2>
         {isLoading ? <Loading />
           : (
             <form>

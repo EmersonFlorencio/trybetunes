@@ -36,6 +36,10 @@ saveMusicAlbum = async () => {
     infoMusic: playlist,
     isLoading: false,
   });
+  const favPlaylist = await getFavoriteSongs();
+  this.setState({
+    favorites: favPlaylist,
+  });
 }
 
 saveFavorites = async ({ target }, music) => {
