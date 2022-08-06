@@ -4,6 +4,7 @@ import getMusics from '../services/musicsAPI';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 
 class Album extends React.Component {
   constructor() {
@@ -13,6 +14,7 @@ class Album extends React.Component {
       name: '',
       infoMusic: [],
       isLoading: false,
+      favorites: [],
     };
   }
 
@@ -28,7 +30,6 @@ saveMusicAlbum = async () => {
   const albumMusic = await getMusics(id);
   const data = albumMusic[0];
   const playlist = albumMusic.filter((music) => music.previewUrl !== undefined);
-  console.log(playlist);
   this.setState({
     album: data.collectionName,
     name: data.artistName,
@@ -37,24 +38,48 @@ saveMusicAlbum = async () => {
   });
 }
 
+saveFavorites = async ({ target }, music) => {
+  this.setState({
+    isLoading: true,
+  });
+  if (target.checked) {
+    await addSong(music);
+  } else {
+    await removeSong(music);
+  }
+  const favPlaylist = await getFavoriteSongs();
+  this.setState({
+    favorites: favPlaylist,
+  });
+  this.setState({
+    isLoading: false,
+  });
+}
+
 render() {
-  const { album, name, infoMusic, isLoading } = this.state;
+  const { album, name, infoMusic, isLoading, favorites } = this.state;
   return (
     <div data-testid="page-album">
       <Header />
       <h3 data-testid="album-name">{album}</h3>
       <h3 data-testid="artist-name">{name}</h3>
       <div>
-        {isLoading && <Loading />}
-        <ul>
-          {infoMusic.map((music, index) => (
-            <MusicCard
-              key={ index }
-              trackName={ music.trackName }
-              previewTrack={ music.previewUrl }
-            />
-          ))}
-        </ul>
+        {isLoading ? <Loading />
+          : (
+            <ul>
+              {infoMusic.map((music, index) => (
+                <MusicCard
+                  key={ index }
+                  trackName={ music.trackName }
+                  previewTrack={ music.previewUrl }
+                  trackId={ music.trackId }
+                  music={ music }
+                  saveFavorites={ this.saveFavorites }
+                  favorites={ favorites }
+                />
+              ))}
+            </ul>
+          )}
       </div>
     </div>
   );
