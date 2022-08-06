@@ -45,7 +45,6 @@ class Search extends React.Component {
     });
     const { nameArtist } = this.state;
     const albums = await searchAlbumsAPI(nameArtist);
-    console.log(albums);
     this.setState({
       arrAlbum: albums,
       isLoading: false,
