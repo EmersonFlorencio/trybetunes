@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
 
+import '../styles/styles-login.css';
+
 class Login extends React.Component {
   constructor() {
     super();
@@ -42,11 +44,14 @@ class Login extends React.Component {
   render() {
     const { nameLogin, buttonDisable, isLoading } = this.state;
     return (
-      <div data-testid="page-login">
-        <h2>Login</h2>
+      <div
+        data-testid="page-login"
+        className="container-login"
+      >
+        <h3 className="heading">Login</h3>
         {isLoading ? <Loading />
           : (
-            <form>
+            <form className="d-flex justify-content-center container-forms">
               <label htmlFor="login-name-input">
                 <input
                   type="text"
@@ -55,6 +60,7 @@ class Login extends React.Component {
                   name="nameLogin"
                   value={ nameLogin }
                   onChange={ this.hendleChange }
+                  className="input-name"
                 />
               </label>
               <button
@@ -62,6 +68,7 @@ class Login extends React.Component {
                 data-testid="login-submit-button"
                 disabled={ buttonDisable }
                 onClick={ this.loginSubmit }
+                className="button-login"
               >
                 Entrar
               </button>

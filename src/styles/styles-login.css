@@ -1,0 +1,57 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('./pixel-notas-musicais-icone-elemento-de-musica-de-arte-de-8-bits-ilustracao-simbolo-assinar-jogos-vetor_744955-849.avif');
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  width: auto;
+}
+
+.container-login {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 500x;
+  gap: 70px;
+
+  background-color: gray;
+  border-radius: 10%;
+}
+
+.heading {
+  color: white;
+}
+
+.container-forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 350px;
+}
+
+.input-name {
+  padding: 3px;
+  margin-bottom: 2em;
+  margin-left: 10px;
+}
+
+.button-login {
+  border-radius: 10%;
+  background: blue;
+  color: #FFFF;
+  height: 3em;
+  width: 5em;
+}
+
+.button-login:disabled {
+  background-color: aqua;
+}
+.button-login:hover {
+  background-color: blue;
+}
