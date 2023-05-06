@@ -3,10 +3,10 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('./pixel-notas-musicais-icone-elemento-de-musica-de-arte-de-8-bits-ilustracao-simbolo-assinar-jogos-vetor_744955-849.avif');
+  background-image: url('./music-studio-wallpaper-1920x1200_6.jpg');
   background-repeat: no-repeat;
   background-position-x: 50%;
-  width: auto;
+  width: 100vw;
 }
 
 .container-login {
@@ -15,16 +15,15 @@ body {
   align-content: center;
   justify-content: center;
   align-items: center;
-  height: 300px;
+  height: 450px;
   width: 500x;
   gap: 70px;
-
-  background-color: gray;
+  background-color: #f0f0f0;
   border-radius: 10%;
 }
 
 .heading {
-  color: white;
+  color: black;
 }
 
 .container-forms {
@@ -32,26 +31,30 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  width: 350px;
+  width: 300px;
+  height: 150px;
 }
 
 .input-name {
   padding: 3px;
   margin-bottom: 2em;
   margin-left: 10px;
+  border-radius: 50px;
+  width: 200px;
+  text-align: center;
 }
 
 .button-login {
   border-radius: 10%;
-  background: blue;
-  color: #FFFF;
+  background: #957fef;
+  color: black;
   height: 3em;
   width: 5em;
 }
 
 .button-login:disabled {
-  background-color: aqua;
+  background-color: #b79ced;
 }
 .button-login:hover {
-  background-color: blue;
+  background-color: #6247aa;
 }

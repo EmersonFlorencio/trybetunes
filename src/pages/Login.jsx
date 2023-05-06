@@ -61,6 +61,7 @@ class Login extends React.Component {
                   value={ nameLogin }
                   onChange={ this.hendleChange }
                   className="input-name"
+                  placeholder="Digite seu Nome"
                 />
               </label>
               <button
@@ -68,7 +69,7 @@ class Login extends React.Component {
                 data-testid="login-submit-button"
                 disabled={ buttonDisable }
                 onClick={ this.loginSubmit }
-                className="button-login"
+                className="button-login btn btn-outline-secondary"
               >
                 Entrar
               </button>
