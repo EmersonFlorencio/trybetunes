@@ -94,10 +94,21 @@ class Search extends React.Component {
                       <ul>
                         { arrAlbum.map((album) => (
                           <li key={ album.collectionId } className="album-container">
-                            <p>{album.artistName}</p>
-                            <p>{album.collectionName}</p>
-                            <p>{album.releaseDate}</p>
-                            <p>{album.trackCount}</p>
+                            <p>
+                              Artista:
+                              {' '}
+                              {album.artistName}
+                            </p>
+                            <p>
+                              Álbum:
+                              {' '}
+                              {album.collectionName}
+                            </p>
+                            <p>
+                              Número de Músicas:
+                              {' '}
+                              {album.trackCount}
+                            </p>
                             <Link
                               data-testid={ `link-to-album-${album.collectionId}` }
                               to={ `/album/${album.collectionId}` }

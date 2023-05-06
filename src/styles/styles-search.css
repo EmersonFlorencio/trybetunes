@@ -22,6 +22,7 @@
   flex-flow: wrap;
   gap: 10px;
   width: 1400px;
+  margin-top: 40px;
   background-color: #f0f0f0;
 }
 
@@ -30,7 +31,7 @@
   width: 250px;
   justify-content: center;
   align-items: center;
-  height: 350px;
+  height: 400px;
   flex-wrap: wrap;
   align-content: center;
   background-color: #c0c0c0;
@@ -55,4 +56,13 @@ ul {
 .heading-search {
   margin-top: 200px;
   margin-left: 50px;
+}
+
+li p {
+  width: 200px;
+}
+
+li img {
+  width: 150px;
+  height: 150px;
 }
