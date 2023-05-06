@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import Loading from './Loading';
 import { getUser } from '../services/userAPI';
 
+import '../styles/styles-header.css';
+import seachSVG from '../styles/images/search.svg';
+import favoritesSVG from '../styles/images/star.svg';
+import profileSVG from '../styles/images/person-circle.svg';
+
 class Header extends React.Component {
   constructor() {
     super();
@@ -27,16 +32,19 @@ class Header extends React.Component {
   render() {
     const { loadName, isloading } = this.state;
     return (
-      <>
-        <header data-testid="header-component">
+      <div className="header-container">
+        <header data-testid="header-component" className="header-links">
           <Link data-testid="link-to-search" to="/search">
             Pesquisa
+            <img src={ seachSVG } alt="ícone de pesquisa" />
           </Link>
           <Link data-testid="link-to-favorites" to="/favorites">
             Favoritos
+            <img src={ favoritesSVG } alt="ícone de Favoritos" />
           </Link>
           <Link data-testid="link-to-profile" to="/profile">
             Profile
+            <img src={ profileSVG } alt="ícone do perfil da conta" />
           </Link>
         </header>
         {isloading ? <Loading />
@@ -45,8 +53,7 @@ class Header extends React.Component {
               {`Ola, ${loadName.name}!`}
             </p>
           )}
-      </>
-
+      </div>
     );
   }
 }

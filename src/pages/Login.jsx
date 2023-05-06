@@ -44,38 +44,38 @@ class Login extends React.Component {
   render() {
     const { nameLogin, buttonDisable, isLoading } = this.state;
     return (
-      <div
-        data-testid="page-login"
-        className="container-login"
-      >
-        <h3 className="heading">Login</h3>
-        {isLoading ? <Loading />
-          : (
-            <form className="d-flex justify-content-center container-forms">
-              <label htmlFor="login-name-input">
-                <input
-                  type="text"
-                  data-testid="login-name-input"
-                  id="login-name-input"
-                  name="nameLogin"
-                  value={ nameLogin }
-                  onChange={ this.hendleChange }
-                  className="input-name"
-                  placeholder="Digite seu Nome"
-                />
-              </label>
-              <button
-                type="submit"
-                data-testid="login-submit-button"
-                disabled={ buttonDisable }
-                onClick={ this.loginSubmit }
-                className="button-login btn btn-outline-secondary"
-              >
-                Entrar
-              </button>
-            </form>
-          )}
-      </div>
+      <>
+        {isLoading && <Loading />}
+        <div
+          data-testid="page-login"
+          className="container-login"
+        >
+          <h3 className="heading">Login</h3>
+          <form className="d-flex justify-content-center container-forms">
+            <label htmlFor="login-name-input">
+              <input
+                type="text"
+                data-testid="login-name-input"
+                id="login-name-input"
+                name="nameLogin"
+                value={ nameLogin }
+                onChange={ this.hendleChange }
+                className="input-name"
+                placeholder="Digite seu Nome"
+              />
+            </label>
+            <button
+              type="submit"
+              data-testid="login-submit-button"
+              disabled={ buttonDisable }
+              onClick={ this.loginSubmit }
+              className="button-login btn btn-outline-secondary"
+            >
+              Entrar
+            </button>
+          </form>
+        </div>
+      </>
     );
   }
 }
