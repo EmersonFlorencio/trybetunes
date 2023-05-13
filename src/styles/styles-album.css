@@ -8,6 +8,7 @@
   align-items: center;
   align-content: flex-start;
   flex-wrap: wrap;
+  border-radius: 20px;
 }
 
 .album-container h3 {
@@ -20,8 +21,13 @@
   width: 1400px;
   background-color: #f0f0f0;
   border-radius: 20px;
+  
 }
 
+.music-container ul {
+  display: flex;
+  justify-content: center;
+}
 
 .music-cards {
   gap: 24px;
