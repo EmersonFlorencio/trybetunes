@@ -21,7 +21,7 @@ class MusicCard extends React.Component {
 
     const { isLoading } = this.state;
     return (
-      <div>
+      <div className="music-cards">
         {isLoading ? <Loading />
           : (
             <>
@@ -33,7 +33,10 @@ class MusicCard extends React.Component {
                 {' '}
                 <code>audio</code>
               </audio>
-              <label htmlFor="favoriteBox">
+              <label
+                htmlFor="favoriteBox"
+                className="input-checkbox"
+              >
                 <input
                   type="checkbox"
                   name="favoriteBox"

@@ -6,6 +6,8 @@ import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 
+import '../styles/styles-album.css';
+
 class Album extends React.Component {
   constructor() {
     super();
@@ -63,11 +65,24 @@ saveFavorites = async ({ target }, music) => {
 render() {
   const { album, name, infoMusic, isLoading, favorites } = this.state;
   return (
-    <div data-testid="page-album">
+    <div
+      data-testid="page-album"
+      className="album-container"
+    >
       <Header />
-      <h3 data-testid="album-name">{album}</h3>
-      <h3 data-testid="artist-name">{name}</h3>
       <div>
+        <h3 data-testid="artist-name">
+          Artista:
+          {' '}
+          {name}
+        </h3>
+        <h3 data-testid="album-name">
+          Album:
+          {' '}
+          {album}
+        </h3>
+      </div>
+      <div className="music-container">
         {isLoading ? <Loading />
           : (
             <ul>
