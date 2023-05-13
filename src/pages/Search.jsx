@@ -93,7 +93,7 @@ class Search extends React.Component {
                     <div className="album">
                       <ul>
                         { arrAlbum.map((album) => (
-                          <li key={ album.collectionId } className="album-container">
+                          <li key={ album.collectionId } className="album-cards">
                             <p>
                               Artista:
                               {' '}
